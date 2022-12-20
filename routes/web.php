@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('send_email',[MailController::class,'sendEmail']);
+
+Route::get('image-upload', [ ImageController::class, 'upload' ])->name('image.upload');
+Route::post('image-store', [ ImageController::class, 'store' ])->name('image.upload.post');
